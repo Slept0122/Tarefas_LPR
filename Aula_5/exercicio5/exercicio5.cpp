@@ -1,19 +1,29 @@
 #include <iostream>
-#include <iomanip>
+#include <cmath>
 
 using namespace std;
-double horas, horasem, horasmes, semneces, diasneces;
+
 int main()
 {
+    double horasPorDia;
+
     do
     {
-        cout << "horas de treinamento de um jedi por dia: ";
-        cin >> horas;
-    }while (horas <= 0);  
+        cout << "insira o valor de horas treinadas por dia: ";
+        cin >> horasPorDia;
 
-    horasem = horas * 5;
-    semneces = 1000 / horasem;
-    horasmes = semneces / 4.5;
+    } while (horasPorDia <= 0);
 
-    cout << "para " << horas << " horas de treino por dia daria " << horasmes << " meses," << horasem << " semanas e" << horas << " dias";
+    const int diasPorSemana = 5;
+    double horasPorSemana = horasPorDia * diasPorSemana;
+    const int totalHoras = 1000;
+
+    double semanasNecessarias = totalHoras / horasPorSemana;
+    double diasNecessarios = semanasNecessarias * diasPorSemana;
+    double mesesNecessarios = semanasNecessarias / 4.5;
+
+    cout << "Para alcançar 1000 horas de treinamento\n";
+    cout << "seria " << round(mesesNecessarios) << " meses de treino.\n";
+    cout << "aproximadamente " << round(semanasNecessarias) << " semanas.\n";
+    cout << "isso vale " << round(diasNecessarios) << " dias de treinamento.\n";
 }
