@@ -1,3 +1,7 @@
 {
-    "dotnet.defaultSolution": "exercicio1.sln"
+    "dotnet.defaultSolution": "exercicio3.sln",
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp"
+    }
 }
